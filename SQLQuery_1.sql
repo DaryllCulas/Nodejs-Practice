@@ -22,3 +22,22 @@ INSERT INTO studentTable(
 );
 
 
+INSERT INTO studentTable(
+    studentID, studentFirstName,
+    studentLastName, Email,
+    StudentPassword
+)VALUES(
+    2023002, 'Tanjiro',
+    'Kamado', 'tanjirokamado15@gmail.com',
+    'demonslayer01'
+);
+
+INSERT INTO studentTable(
+    studentID, studentFirstName,
+    studentLastName, Email,
+    StudentPassword
+)VALUES(
+    2023003, 'Nezuko',
+    'Kamado', 'Nezukokamado20@gmail.com',
+    'demonslayer02'
+);
