@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/DaryllCulas/Nodejs-Practice#readme",
   "dependencies": {
-    "msnodesqlv8": "^4.1.0"
+    "msnodesqlv8": "^4.1.0",
+    "mssql": "^9.1.1"
   }
-
 }
