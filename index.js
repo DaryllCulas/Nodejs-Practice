@@ -8,7 +8,7 @@ const sql  = require('mssql/msnodesqlv8');
     server: '172.17.0.1', // name of server
     driver: 'msnodesqlv8',
     options: {
-      trustedConnection: true
+      trustedServerCertificate: true,
     }
 
   };
