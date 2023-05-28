@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-practice",
+  "version": "1.0.0",
+  "description": "This is nodejs-practice only",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/DaryllCulas/Nodejs-Practice.git"
+  },
+  "keywords": [
+    "nodejs-practice"
+  ],
+  "author": "DaryllCulas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaryllCulas/Nodejs-Practice/issues"
+  },
+  "homepage": "https://github.com/DaryllCulas/Nodejs-Practice#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "msnodesqlv8": "^4.1.0",
+    "mssql": "^9.1.1"
+  }
+}
