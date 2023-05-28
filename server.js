@@ -7,6 +7,8 @@ app.use("/assets", express.static("assets"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+
+//Server Config
 app.get("/", async function (req, res) {
   const config = {
     user: "sa",
@@ -20,14 +22,23 @@ app.get("/", async function (req, res) {
   };
 
   try {
+    // Establish a connection to the SQL Server database
     await mssql.connect(config);
+
+    // Create a new request object
     const request = new mssql.Request();
+
+    // Execute the query and store the result
     const result = await request.query("SELECT * FROM studentTable");
+
+    // Send the recordset as the response
     res.send(result.recordset);
   } catch (err) {
+    // Handle database connection or query errors
     console.log("Database connection error:", err);
     res.status(500).send("Database connection error");
   } finally {
+    // Close the database connection
     mssql.close();
   }
 });
