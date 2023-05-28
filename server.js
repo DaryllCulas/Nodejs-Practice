@@ -7,9 +7,6 @@ app.use("/assets", express.static("assets"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//Lofin endpoint
-
-
 const config = {
   user: "sa",
   password: "M@kar0v99",
