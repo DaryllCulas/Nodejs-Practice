@@ -1,6 +1,9 @@
+DROP TABLE IF EXISTS studentTable;
 CREATE DATABASE nodejs;
 
-CREATE TABLE studentTable(
+
+
+CREATE TABLE studentTable (
     studentID INT PRIMARY KEY NOT NULL,
     studentFirstName VARCHAR(255) NOT NULL,
     studentLastName VARCHAR(255) NOT NULL,
@@ -41,3 +44,4 @@ INSERT INTO studentTable(
     'Kamado', 'Nezukokamado20@gmail.com',
     'demonslayer02'
 );
+
