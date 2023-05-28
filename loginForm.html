@@ -62,13 +62,14 @@
         <h1>LOGIN FORM</h1>
         <label>Student ID No. </label>
           <input type="text" name="studentid" id="studentID" required>
+            <span id="studentIDspan" style="color: red; display: none;">Please fill up your Student ID!</span>
          
         <label>Email</label>
           <input type="text" name="Email" id="studentEmail">
-          
+            <span id="studentEmailSpan" style="color: red; display: none;">Please fill up your Student Email!</span>
         <label>Password</label>
           <input type="text" name="password" id="studentPassword" required>
-          
+            <span id="studentPasswordSpan" style="color: red; display: none;">Please fill up your Password!</span>
           <input type="button" onclick="checkForm()" value="Login">
 
       </form>
