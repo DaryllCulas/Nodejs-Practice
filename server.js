@@ -4,8 +4,18 @@ const mssql = require("mssql");
 const app = express();
 app.use("/assets", express.static("assets"));
 
+// Import the login endpoint router
+const loginEndpoint = require('./loginEndpoint');
+
+const port = 5000;
+
+// Use the login endpoint router
+app.use('/', loginEndpoint);
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 
 //Server Config
@@ -42,6 +52,6 @@ app.get("/", async function (req, res) {
   }
 });
 
-app.listen(5000, function () {
-  console.log("Server is running on port 5000...");
+app.listen(port, function () {
+  console.log(`Server is running on ${port}`);
 });
