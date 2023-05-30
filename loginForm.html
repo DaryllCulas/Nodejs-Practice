@@ -81,13 +81,24 @@
     function checkForm(event){
         event.preventDefault();
 
-        const studentIdTF = document.getElementById('studentID').value;
-        const studentEmailTF = document.getElementById('studentEmail').value;
-        const studentPasswordTF = document.getElementById('studentPassword').value;
+        const studentIdTF = document.getElementById('studentID').value.trim();
+        const studentEmailTF = document.getElementById('studentEmail').value.trim();
+        const studentPasswordTF = document.getElementById('studentPassword').value.trim();
 
         const studentIDspanElement = document.getElementById('studentIDspan');
         const studentEmailSpanElement = document.getElementById('studentEmailSpan');
-        const studentPasswordSpanElemen = document.getElementById('studentPasswordSpan');
+        const studentPasswordSpanElement = document.getElementById('studentPasswordSpan');
+
+          studentEmailSpanElement.textContent = "";
+          studentEmailSpanElement.textContent = "";
+          studentPasswordSpanElement.textContent = "";
+
+            
+
+
+
+
+
     }
 
   </script>
