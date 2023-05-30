@@ -9,6 +9,7 @@ const loginEndpoint = require('./loginEndpoint');
 
 const port = 5000;
 
+
 // Use the login endpoint router
 app.use('/', loginEndpoint);
 
@@ -30,6 +31,9 @@ app.get("/", async function (req, res) {
       trustServerCertificate: true,
     },
   };
+
+  //Redirect to loginForm
+  res.sendFile(__dirname + "/loginForm.html");
   try {
     // Establish a connection to the SQL Server database
     await mssql.connect(config);
