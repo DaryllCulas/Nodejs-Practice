@@ -45,3 +45,12 @@ INSERT INTO studentTable(
     'demonslayer02'
 );
 
+INSERT INTO studentTable(
+    studentID, studentFirstName,
+    studentLastName, Email,
+    StudentPassword
+)VALUES(
+    2023004, 'Tengen',
+    'Uzui', 'UzuiTengen21@gmail.com',
+    'demonslayer03'
+);
