@@ -40,7 +40,7 @@
     box-sizing: border-box;
   }
 
-  input[type="button"] {
+  input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-top: 20px;
@@ -51,55 +51,81 @@
     cursor: pointer;
   }
 
-  input[type="button"]:hover {
+  input[type="submit"]:hover {
     background-color: #000000;
   }
 </style>
 <body>
   <center>
     <div class="container">
-      <form method="post">
+      <form method="post" id="loginForm" action="/login">
         <h1>LOGIN FORM</h1>
         <label>Student ID No. </label>
           <input type="text" name="studentid" id="studentID" required>
-            <span id="studentIDspan" style="color: red; display: none;">Please fill up your Student ID!</span>
+            <span id="studentIDspan" style="color: red;"></span>
          
         <label>Email</label>
           <input type="text" name="Email" id="studentEmail">
-            <span id="studentEmailSpan" style="color: red; display: none;">Please fill up your Student Email!</span>
+            <span id="studentEmailSpan" style="color: red;"></span>
 
         <label>Password</label>
           <input type="text" name="password" id="studentPassword" required>
-            <span id="studentPasswordSpan" style="color: red; display: none;">Please fill up your Student Password!</span>
-          <input type="button" onclick="checkForm()" value="Login">
+            <span id="studentPasswordSpan" style="color: red;"></span>
+          <input type="submit" onclick="checkForm()" value="Login">
 
       </form>
   </div>
   </center>
 
   <script>
-    function checkForm(event){
-        event.preventDefault();
+    function checkForm(event) {
+  event.preventDefault(); // Prevent form submission
 
-        const studentIdTF = document.getElementById('studentID').value.trim();
-        const studentEmailTF = document.getElementById('studentEmail').value.trim();
-        const studentPasswordTF = document.getElementById('studentPassword').value.trim();
+  // Get form inputs
+  const studentIdTF = document.getElementById('studentID').value.trim();
+  const studentEmailTF = document.getElementById('studentEmail').value.trim();
+  const studentPasswordTF = document.getElementById('studentPassword').value.trim();
 
-        const studentIDspanElement = document.getElementById('studentIDspan');
-        const studentEmailSpanElement = document.getElementById('studentEmailSpan');
-        const studentPasswordSpanElement = document.getElementById('studentPasswordSpan');
+  const studentIDspanElement = document.getElementById('studentIDspan');
+  const studentEmailSpanElement = document.getElementById('studentEmailSpan');
+  const studentPasswordSpanElement = document.getElementById('studentPasswordSpan');
 
-          studentEmailSpanElement.textContent = "";
-          studentEmailSpanElement.textContent = "";
-          studentPasswordSpanElement.textContent = "";
+  // Clear previous error messages
+  studentIDspanElement.textContent = "";
+  studentEmailSpanElement.textContent = "";
+  studentPasswordSpanElement.textContent = "";
 
-            
+  // Perform validation
+  let isValid = true;
+  if (studentIdTF === "") {
+    studentIDspanElement.textContent = "Please enter your Student ID!";
+    isValid = false;
+  }
 
+  if (studentEmailTF === "") {
+    studentEmailSpanElement.textContent = "Please enter your Student Email!";
+    isValid = false;
+  }
 
+  if (studentPasswordTF === "") {
+    studentPasswordSpanElement.textContent = "Please enter your Student Password!";
+    isValid = false;
+  }
 
+  // Submit the form if it's valid
+  if (isValid) {
+    document.getElementById('loginForm').submit();
+  }
+}
 
+// Check for an error parameter in the URL
+const urlParams = new URLSearchParams(window.location.search);
+const error = urlParams.get('error');
 
-    }
+if (error === '1') {
+  alert('Invalid data');
+}
+
 
   </script>
 </body>
