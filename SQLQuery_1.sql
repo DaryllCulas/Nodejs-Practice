@@ -54,3 +54,13 @@ INSERT INTO studentTable(
     'Uzui', 'UzuiTengen21@gmail.com',
     'demonslayer03'
 );
+
+INSERT INTO studentTable(
+    studentID, studentFirstName,
+    studentLastName, Email,
+    StudentPassword
+)VALUES(
+    2023005, 'Giyuu',
+    'Tomioka', 'GiyuuTomioka23@gmail.com',
+    'demonslayer04'
+);
