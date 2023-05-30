@@ -20,7 +20,6 @@ app.get("/", async function (req, res) {
       trustServerCertificate: true,
     },
   };
-
   try {
     // Establish a connection to the SQL Server database
     await mssql.connect(config);
