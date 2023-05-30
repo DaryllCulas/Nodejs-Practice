@@ -67,9 +67,10 @@
         <label>Email</label>
           <input type="text" name="Email" id="studentEmail">
             <span id="studentEmailSpan" style="color: red; display: none;">Please fill up your Student Email!</span>
+
         <label>Password</label>
           <input type="text" name="password" id="studentPassword" required>
-            <span id="studentPasswordSpan" style="color: red; display: none;">Please fill up your Password!</span>
+            <span id="studentPasswordSpan" style="color: red; display: none;">Please fill up your Student Password!</span>
           <input type="button" onclick="checkForm()" value="Login">
 
       </form>
@@ -77,7 +78,17 @@
   </center>
 
   <script>
-    
+    function checkForm(event){
+        event.preventDefault();
+
+        const studentIdTF = document.getElementById('studentID').value;
+        const studentEmailTF = document.getElementById('studentEmail').value;
+        const studentPasswordTF = document.getElementById('studentPassword').value;
+
+        const studentIDspanElement = document.getElementById('studentIDspan');
+        const studentEmailSpanElement = document.getElementById('studentEmailSpan');
+        const studentPasswordSpanElemen = document.getElementById('studentPasswordSpan');
+    }
 
   </script>
 </body>
