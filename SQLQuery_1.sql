@@ -12,7 +12,7 @@ CREATE TABLE studentTable (
 
 );
 
-SELECT * FROM studentTable;
+    SELECT * FROM studentTable;
 
 INSERT INTO studentTable(
     studentID, studentFirstName,
