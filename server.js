@@ -2,24 +2,22 @@ const express = require("express");
 const mssql = require("mssql");
 
 const app = express();
-app.use("/assets", express.static("assets"));
-
-// Import the login endpoint router
-const loginEndpoint = require('./loginEndpoint');
-
 const port = 5000;
 
+// Middleware for serving static assets
+app.use("/assets", express.static("assets"));
 
-// Use the login endpoint router
-app.use('/', loginEndpoint);
-
-
+// Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Import the login endpoint router
+ const loginEndpoint = require('./loginEndpoint');
 
+// Use the login endpoint router
+ app.use('/', loginEndpoint);
 
-//Server Config
+// Server Config
 app.get("/", async function (req, res) {
   const config = {
     user: "sa",
@@ -32,10 +30,8 @@ app.get("/", async function (req, res) {
     },
   };
 
-  //Redirect to loginForm
-  res.sendFile(__dirname + "/loginForm.html");
   try {
-    // Establish a connection to the SQL Server database
+    // Establish a connection to the SQL server database
     await mssql.connect(config);
 
     // Create a new request object
@@ -44,16 +40,18 @@ app.get("/", async function (req, res) {
     // Execute the query and store the result
     const result = await request.query("SELECT * FROM studentTable");
 
-    // Send the recordset as the response
+    // Send the recordset as the response 
     res.send(result.recordset);
-  } catch (err) {
+  }catch(err) {
     // Handle database connection or query errors
-    console.log("Database connection error:", err);
+    console.log("Database connection error: ", err);
     res.status(500).send("Database connection error");
-  } finally {
+  }finally {
     // Close the database connection
     mssql.close();
   }
+   // Redirect to loginForm
+   res.sendFile(__dirname + "/loginForm.html");
 });
 
 app.listen(port, function () {
