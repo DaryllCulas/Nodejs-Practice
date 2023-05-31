@@ -82,9 +82,9 @@
   event.preventDefault(); // Prevent form submission
 
   // Get form inputs
-  const studentIdTF = document.getElementById('studentID').value.trim();
-  const studentEmailTF = document.getElementById('studentEmail').value.trim();
-  const studentPasswordTF = document.getElementById('studentPassword').value.trim();
+  const studentID = document.getElementById('studentID').value.trim();
+  const Email = document.getElementById('studentEmail').value.trim();
+  const StudentPassword = document.getElementById('studentPassword').value.trim();
 
   const studentIDspanElement = document.getElementById('studentIDspan');
   const studentEmailSpanElement = document.getElementById('studentEmailSpan');
@@ -97,17 +97,17 @@
 
   // Perform validation
   let isValid = true;
-  if (studentIdTF === "") {
+  if (studentID === "") {
     studentIDspanElement.textContent = "Please enter your Student ID!";
     isValid = false;
   }
 
-  if (studentEmailTF === "") {
+  if (Email === "") {
     studentEmailSpanElement.textContent = "Please enter your Student Email!";
     isValid = false;
   }
 
-  if (studentPasswordTF === "") {
+  if (StudentPassword  === "") {
     studentPasswordSpanElement.textContent = "Please enter your Student Password!";
     isValid = false;
   }
