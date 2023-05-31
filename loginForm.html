@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
+  
 </head>
 
 <style>
@@ -58,25 +59,27 @@
 <body>
   <center>
     <div class="container">
-      <form method="POST" id="loginForm" action="/login">
+      <form action="/login" method="POST" id="loginForm" onsubmit="handleLoginFormSubmit()">
         <h1>LOGIN FORM</h1>
-        <label>Student ID No. </label>
-          <input type="text" name="studentid" id="studentID" required>
-            <span id="studentIDspan" style="color: red;"></span>
-         
+        <label>Student ID No.</label>
+        <input type="text" name="studentID" id="studentID" required>
+        <span id="studentIDspan" style="color: red;"></span>
+      
         <label>Email</label>
-          <input type="text" name="Email" id="studentEmail">
-            <span id="studentEmailSpan" style="color: red;"></span>
-
+        <input type="text" name="Email" id="studentEmail">
+        <span id="studentEmailSpan" style="color: red;"></span>
+      
         <label>Password</label>
-          <input type="text" name="password" id="studentPassword" required>
-            <span id="studentPasswordSpan" style="color: red;"></span>
-          <input type="submit" onclick="checkForm()" value="Login">
-
+        <input type="password" name="StudentPassword" id="studentPassword" required>
+        <span id="studentPasswordSpan" style="color: red;"></span>
+      
+        <input type="submit" onclick="checkForm()" value="Login">
       </form>
+      
   </div>
   </center>
 
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
   <script>
     function checkForm(event) {
   event.preventDefault(); // Prevent form submission
@@ -127,6 +130,35 @@ if (error === '1') {
 }
 
 
+
+
+// function handleLoginFormSubmit() {
+//     var formData = {
+//       studentID: document.getElementById('studentID').value,
+//       Email: document.getElementById('Email').value,
+//       StudentPassword: document.getElementById('StudentPassword').value
+//     };
+
+//     $.ajax({
+//       url: "/login",
+//       method: "POST",
+//       data: formData,
+//       success: function (response) {
+//         if (response.success) {
+//           alert(response.message); // Display success message
+//           window.location.href = "/dashboard"; // Redirect to the dashboard
+//         } else {
+//           alert(response.message); // Display failure message
+//         }
+//       },
+//       error: function (xhr, status, error) {
+//         console.log(error);
+//         alert("Server error");
+//       },
+//     });
+//   }
+
   </script>
+
 </body>
 </html>
