@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 // Login endpoint
 router.post('/login', (req, res) => {
-  const { studentID, Email, StudentPassword } = req.body;
+  const { studentID, studentFirstName, Email, StudentPassword } = req.body;
 
   const pool = new mssql.ConnectionPool(config);
   pool.connect((err) => {
@@ -50,17 +50,28 @@ router.post('/login', (req, res) => {
       }
 
       if (recordset.recordset.length > 0) {
-        // // res.send('Login successful');
-         return res.redirect("/dashboard"); // Redirect to the dashboard page
+        res.send(`
+        <script>
+        alert("Login successfully");
+        window.location.href = "/dashboard";
+          </script>
+          `);
+          
+        //  return res.redirect("/dashboard"); // Redirect to the dashboard page
         // res.json({ success: true, message: 'Login successful' });
         // return res.redirect("/dashboard"); // Redirect to the dashboard page
       } else {
-         return res.status(401).send('Login failed');
+        //  return res.status(401).send('Login failed');
+        return res.redirect("/?error=1");
         // res.status(401).json({ success: false, message: 'Login failed' });
       }
     });
   });
 });
+
+
+// Logout Endpoint
+
 
 app.get("/dashboard", function (req, res) {
   res.sendFile(__dirname + "/dashboard.html");
