@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 
 // Login endpoint
 router.post('/login', (req, res) => {
-  const { studentID, studentFirstName, Email, StudentPassword } = req.body;
+  const { studentID, Email, StudentPassword } = req.body;
 
   const pool = new mssql.ConnectionPool(config);
   pool.connect((err) => {
@@ -52,7 +52,7 @@ router.post('/login', (req, res) => {
       if (recordset.recordset.length > 0) {
         res.send(`
         <script>
-        alert("Login successfully");
+        alert("Login Successfully Login");
         window.location.href = "/dashboard";
           </script>
           `);
