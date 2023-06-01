@@ -71,7 +71,7 @@ app.get("/logout",(req,res)=>{
   res.redirect("/");
 });
 
-
+// Dashboard endpoint
 app.get("/dashboard", function (req, res) {
   res.sendFile(__dirname + "/dashboard.html");
 });
