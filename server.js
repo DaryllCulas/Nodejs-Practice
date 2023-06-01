@@ -67,6 +67,9 @@ router.post('/login', (req, res) => {
 
 
 // Logout Endpoint
+app.get("/logout",(req,res)=>{
+  res.redirect("/");
+});
 
 
 app.get("/dashboard", function (req, res) {
