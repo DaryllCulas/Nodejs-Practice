@@ -79,7 +79,7 @@
   </div>
   </center>
 
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+ 
   <script>
     function checkForm(event) {
   event.preventDefault(); // Prevent form submission
@@ -128,35 +128,6 @@ const error = urlParams.get('error');
 if (error === '1') {
   alert('Invalid data');
 }
-
-
-
-
-// function handleLoginFormSubmit() {
-//     var formData = {
-//       studentID: document.getElementById('studentID').value,
-//       Email: document.getElementById('Email').value,
-//       StudentPassword: document.getElementById('StudentPassword').value
-//     };
-
-//     $.ajax({
-//       url: "/login",
-//       method: "POST",
-//       data: formData,
-//       success: function (response) {
-//         if (response.success) {
-//           alert(response.message); // Display success message
-//           window.location.href = "/dashboard"; // Redirect to the dashboard
-//         } else {
-//           alert(response.message); // Display failure message
-//         }
-//       },
-//       error: function (xhr, status, error) {
-//         console.log(error);
-//         alert("Server error");
-//       },
-//     });
-//   }
 
   </script>
 
