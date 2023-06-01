@@ -57,13 +57,9 @@ router.post('/login', (req, res) => {
           </script>
           `);
           
-        //  return res.redirect("/dashboard"); // Redirect to the dashboard page
-        // res.json({ success: true, message: 'Login successful' });
-        // return res.redirect("/dashboard"); // Redirect to the dashboard page
       } else {
-        //  return res.status(401).send('Login failed');
+      
         return res.redirect("/?error=1");
-        // res.status(401).json({ success: false, message: 'Login failed' });
       }
     });
   });
