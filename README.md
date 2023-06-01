@@ -15,6 +15,7 @@
 # npm axios
 
 # Software used: 
+# - Microsoft SQL Server (mcr.microsoft.com/mssql/server:2019-latest) - Ubuntu based image for docker container
 # - docker container - To access my server in azure data studio
 # - azure data studio - To perform sql queries and storing my database
 # - Visual Studio Code
