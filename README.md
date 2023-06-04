@@ -8,11 +8,11 @@
 
 # npm driver installation 
 
-@npm init 
-@npm express
-@npm mssql
-@npm tedious
-@npm axios
+-npm init 
+-npm express
+-npm mssql
+-npm tedious
+-npm axios
 
 # Software used: 
 # - Microsoft SQL Server (mcr.microsoft.com/mssql/server:2019-latest) - Ubuntu based image for docker container
