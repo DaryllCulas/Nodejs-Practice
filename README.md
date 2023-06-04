@@ -6,13 +6,13 @@
 # https://www.tutorialsteacher.com/nodejs/access-sql-server-in-nodejs
 # https://jasonwatmore.com/post/2022/06/18/nodejs-ms-sql-server-crud-api-example-and-tutorial
 
-# npm driver installation installation
+# npm driver installation 
 
-# npm init 
-# npm express
-# npm mssql
-# npm tedious
-# npm axios
+-npm init 
+-npm express
+-npm mssql
+-npm tedious
+-npm axios
 
 # Software used: 
 # - Microsoft SQL Server (mcr.microsoft.com/mssql/server:2019-latest) - Ubuntu based image for docker container
