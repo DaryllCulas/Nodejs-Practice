@@ -8,16 +8,17 @@
 
 # npm driver installation 
 
--npm init 
--npm express
--npm mssql
--npm tedious
--npm axios
+* npm init 
+* npm install express
+* npm install mssql
+* npm install tedious
+* npm install express-router
+* npm install axios
 
 # Software used: 
-# - Microsoft SQL Server (mcr.microsoft.com/mssql/server:2019-latest) - Ubuntu based image for docker container
-# - docker container - To access my server in azure data studio
-# - azure data studio - To perform sql queries and storing my database
-# - Visual Studio Code
-# - Mozilla Firefox - To debug, identifying node errors etc..
+* Microsoft SQL Server (mcr.microsoft.com/mssql/server:2019-latest) - Ubuntu based image for docker container
+* docker container - To access my server in azure data studio
+* azure data studio - To perform sql queries and storing my database
+* Visual Studio Code
+* Mozilla Firefox - To debug, identifying node errors etc..
 
